@@ -6,7 +6,7 @@ globals:
       name: ceph
       node1:
         networks:
-          - provider_net_cci_9
+          - provider_net_cci_12
         role:
           - _admin
           - installer
@@ -19,7 +19,7 @@ globals:
           - crash
       node2:
         networks:
-          - provider_net_cci_9
+          - provider_net_cci_12
         role:
           - mon
           - mgr
@@ -28,7 +28,7 @@ globals:
         disk-size: 15
       node3:
         networks:
-          - provider_net_cci_9
+          - provider_net_cci_12
         role:
           - mon
           - osd
