@@ -133,43 +133,27 @@ tests:
       module: test_client.py
       name: configure client
 
+
   - test:
-      name: Nfs Ganesha File Lock
-      module: nfs_verify_file_lock.py
-      desc: Perform locking on same file from 2 different clients
+      name: Nfs Ganesha rename operations
+      module: test_file_ops_renames.py
+      desc: Perform file and dir renaming and lookups in parallel
       polarion-id:
-      abort-on-fail: false
+      abort-on-fail: true
       config:
         nfs_version: 4.1
-        clients: 2
+        clients: 3
+        num_files: 1000
+        num_dirs: 1000
 
   - test:
-      name: Nfs Ganesha Pynfs
-      module: nfs_verify_pynfs.py
-      desc: Perform pynfs tests on the Nfs cluster
+      name: Nfs Ganesha copy operations
+      module: test_file_ops_copy.py
+      desc: Perform file and dir copy and lookups in parallel
       polarion-id:
-      abort-on-fail: false
+      abort-on-fail: true
       config:
         nfs_version: 4.1
-        clients: 2
-
-  - test:
-      name: Nfs Ganesha Bonnie
-      module: nfs_verify_bonnie.py
-      desc: Perform bonnie tests on the Nfs cluster
-      polarion-id:
-      abort-on-fail: false
-      config:
-        nfs_version: 4.2
-        clients: 4
-
-
-  - test:
-      name: Nfs Verify Readdir Ops
-      module: nfs_verify_readdir_ops.py
-      desc: Perform readir operation from clients
-      polarion-id:
-      abort-on-fail: false
-      config:
-        nfs_version: 4.2
-        clients: 4
+        clients: 3
+        num_files: 1000
+        num_dirs: 1000
