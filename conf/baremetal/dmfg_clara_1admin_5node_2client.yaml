@@ -16,6 +16,11 @@ globals:
             - mgr
             - mds
             - osd
+            - node-exporter
+            - alertmanager
+            - grafana
+            - prometheus
+            - crash
           root_password: passwd
           volumes:
             - /dev/sda
@@ -30,6 +35,9 @@ globals:
             - mds
             - mon
             - osd
+            - node-exporter
+            - alertmanager
+            - crash
           root_password: passwd
           volumes:
             - /dev/sda
@@ -44,6 +52,8 @@ globals:
             - mds
             - mon
             - osd
+            - node-exporter
+            - crash
           root_password: passwd
           volumes:
             - /dev/sda
